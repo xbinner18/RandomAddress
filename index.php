@@ -7,8 +7,60 @@ function GetStr($string, $start, $end)
   return $str[0];
 }
 
-function generateRandomString($length = 6) {
-    return substr(str_shuffle(str_repeat($x='abcdefghijklmnopqrstuvwxyz', ceil($length/strlen($x)) )),1,$length);
+function randomName() {
+    $names = array(
+        'Mischke',
+        'Serna',
+        'Pingree',
+        'Mcnaught',
+        'Pepper',
+        'Schildgen',
+        'Mongold',
+        'Wrona',
+        'Geddes',
+        'Lanz',
+        'Fetzer',
+        'Schroeder',
+        'Block',
+        'Mayoral',
+        'Fleishman',
+        'Roberie',
+        'Latson',
+        'Lupo',
+        'Motsinger',
+        'Drews',
+        'Coby',
+        'Redner',
+        'Culton',
+        'Howe',
+        'Stoval',
+        'Michaud',
+        'Mote',
+        'Menjivar',
+        'Wiers',
+        'Paris',
+        'Grisby',
+        'Noren',
+        'Damron',
+        'Kazmierczak',
+        'Haslett',
+        'Guillemette',
+        'Buresh',
+        'Center',
+        'Kucera',
+        'Catt',
+        'Badon',
+        'Grumbles',
+        'Antes',
+        'Byron',
+        'Volkman',
+        'Klemp',
+        'Pekar',
+        'Pecora',
+        'Schewe',
+        'Ramage',
+    );
+    return $names[rand ( 0 , count($names) -1)];
 }
 
 $ch = curl_init();
@@ -26,7 +78,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
 $res = curl_exec($ch);
 $name = trim(strip_tags(getStr($res,'<td><span>Full Name</span></td>','</b>')));
 $first = trim(strip_tags(getStr($res,'<td><b>','&nbsp;')));
-$last = generateRandomString();
+$last = randomName();
 $street = trim(strip_tags(getStr($res,'<td>Street</td>','</b></td>')));
 $city = trim(strip_tags(getStr($res,'<td>City</td>','</b></td>')));
 $state = trim(strip_tags(getStr($res,'State/Province abbr','</b></td>')));
