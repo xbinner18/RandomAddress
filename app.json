@@ -1,7 +1,1 @@
-{
-  "URL": {
-    "description": "type your {appname}.herokuapp.com",
-    "value": "",
-    "required": true
-    }
-}
+{}
