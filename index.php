@@ -15,7 +15,7 @@ function multiexplode($delimiters, $string)
 }
 
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://fakepersongenerator.com/Index/generate');
+curl_setopt($ch, CURLOPT_URL, 'https://fakepersongenerator.com/fake-name-generator');
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 'User-Agent: Mozilla/5.0 (Linux; Android 10; vivo 1806) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.64 Mobile Safari/537.36',
